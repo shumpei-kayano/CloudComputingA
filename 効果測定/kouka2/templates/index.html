@@ -8,26 +8,41 @@
     <title>トップページ</title>
 </head>
 <body>
-    <div class="container">
-        <form action="/awsRekog" method="post">
+    <div class="container border-bottom">
+        <p class="h1 mt-5">Rekognitionによる顔検出</p>
+        <form action="/" method="post" enctype="multipart/form-data">
             <div class="row mt-5">
                 <div class="col">
                     <label for="formFileLg" class="form-label">認識元画像</label>
-                    <input class="form-control form-control-lg" id="formFileLg" type="file">
+                    <input class="form-control form-control-lg" id="formFileLg" type="file" accept="image/*" name="image1" required>
                 </div>
                 <div class="col">
                     <label for="formFileLg" class="form-label">認識対象画像</label>
-                    <input class="form-control form-control-lg" id="formFileLg" type="file">
+                    <input class="form-control form-control-lg" id="formFileLg" type="file" accept="image/*" name="image2" required>
                 </div>
             </div>
             <div class="row">
                 <div class="col"></div>
                 <div class="col mt-5" style="text-align: center;">
-                    <button type="submit" class="btn btn-danger btn-lg">認識</button>
+                    <button type="submit" class="btn btn-danger btn-lg mb-5">認識</button>
                 </div>
                 <div class="col"></div>
             </div>
         </form>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <div class="card mt-3" style="width: 18rem;">
+                    <img src="{{ image_url }}" class="card-img-top">
+                    <div class="card-body">
+                    <p class="card-text">{{ text }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
     </div>
 </body>
 </html>
