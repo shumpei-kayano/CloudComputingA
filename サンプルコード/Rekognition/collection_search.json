@@ -1,0 +1,38 @@
+{
+  "SearchedFaceBoundingBox": {
+      "Width": 0.1609659492969513,
+      "Height": 0.14517903327941895,
+      "Left": 0.4896174371242523,
+      "Top": 0.15903684496879578
+  },
+  "SearchedFaceConfidence": 99.99781799316406,
+  "FaceMatches": [
+      {
+          "Similarity": 100.0,
+          "Face": {
+              "FaceId": "2ec35e30-80b6-4aee-be51-7b9883a97670",
+              "BoundingBox": {
+                  "Width": 0.16096599400043488,
+                  "Height": 0.14517900347709656,
+                  "Left": 0.4896169900894165,
+                  "Top": 0.15903699398040771
+              },
+              "ImageId": "ef7c01b4-1d9f-3f5d-afce-ddbd7f6f42b6",
+              "Confidence": 99.997802734375,
+              "IndexFacesModelVersion": "6.0"
+          }
+      }
+  ],
+  "FaceModelVersion": "6.0",
+  "ResponseMetadata": {
+      "RequestId": "85f2c5fc-b6b6-441f-a964-33cf778a428e",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+          "x-amzn-requestid": "85f2c5fc-b6b6-441f-a964-33cf778a428e",
+          "content-type": "application/x-amz-json-1.1",
+          "content-length": "533",
+          "date": "Wed, 11 May 2022 07:38:21 GMT"
+      },
+      "RetryAttempts": 0
+  }
+}

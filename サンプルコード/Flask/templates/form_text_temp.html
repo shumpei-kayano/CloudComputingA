@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ title }}</title>
+</head>
+<body>
+  <h1>POSTによるフォームのデータ取得</h1>
+  <h2>{{ formtype }}</h2>
+  <form action="/form_text" method="POST" enctype="multipart/form-data">
+    <div>
+      <label for="name">画像ファイル名：</label>
+      <input type="text" id="name" name="name" placeholder="画像ファイル名">	
+    </div>
+    <div>
+      <input type="submit" value="送信">
+    </div>
+  </form>
+  <hr>
+  <div><p>画像ファイル名：{{ file_name }}</p></div>
+</body>
+</html>

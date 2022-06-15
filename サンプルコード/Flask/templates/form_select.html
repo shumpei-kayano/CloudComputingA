@@ -1,0 +1,26 @@
+{% extends "form_base.html" %}
+{% block title %}{{super()}}{% endblock %}
+{% block content %}
+<div>
+  <h2>フォームタイプ {{ form_type }}</h2>
+  <form action="/form_select" method="POST" enctype="multipart/form-data">
+    <div><h3>希望コース選択</h3></div>
+    <select name="sel">
+			<option value="null" disabled selected>選択して下さい</option>
+			<option value="高度情報システム">
+				高度情報システムコース</option>
+			<option value="システム開発">
+				システム開発コース</option>
+			<option value="AI＆データサイエンス">
+				AI＆データサイエンスコース</option>
+			<option value="ネットワークセキュリティコース">
+				ネットワークセキュリティコース</option>
+		</select>
+		<div>
+			<input type="submit" value="送信">
+		</div>
+  </form>
+  <hr>
+  <div><p>選択されたコース：{{ cource_name }}コース</p></div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{title}}</title>
+</head>
+<body>
+  <h1>{{message}}</h1>
+
+  <h2>要素にアクセスしてリストを表示</h2>
+  <p>{{ml_services[0]}}サービス</p>
+  <p>{{ml_services[1]}}サービス</p>
+  <p>{{ml_services[2]}}サービス</p>
+  <p>{{ml_services[3]}}サービス</p>
+  <hr>
+
+  <h2>for文でリストを表示</h2>
+  {% for service in ml_services %}
+    <p>{{ service }}サービス</p>
+  {% endfor %}
+  <hr>
+  
+  <h2>for文で辞書を表示</h2>
+  {% for k, v in ml_service_dict.items() %}
+    <p>{{k}}サービスの価格は１日{{v}}円</p>
+  {% endfor %}
+</body>
+</html>

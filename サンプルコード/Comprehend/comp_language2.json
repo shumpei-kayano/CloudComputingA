@@ -1,0 +1,19 @@
+{
+  "Languages": [
+    {
+      "LanguageCode": "en",
+      "Score": 0.998666524887085
+    }
+  ],
+  "ResponseMetadata": {
+    "RequestId": "b50c1720-f1b2-457f-bdeb-9755de06393c",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "x-amzn-requestid": "b50c1720-f1b2-457f-bdeb-9755de06393c",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "63",
+      "date": "Tue, 24 May 2022 09:49:51 GMT"
+    },
+    "RetryAttempts": 0
+  }
+}

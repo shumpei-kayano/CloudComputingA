@@ -1,0 +1,20 @@
+{% extends "form_base.html" %}
+{% block title %}{{super()}}{% endblock %}
+{% block content %}
+<div>
+  <h2>フォームタイプ {{ form_type }}</h2>
+  <form action="/form_textarea" method="POST" enctype="multipart/form-data">
+    <div>
+      <label for="name">文章の入力：</label>
+    </div>
+    <div>
+      <textarea name="texts" rows="6" cols="40"></textarea>	
+    </div>
+    <div>
+      <input type="submit" value="送信">
+    </div>
+  </form>
+  <hr>
+  <div><p>入力された文章：{{ texts }}</p></div>
+</div>
+{% endblock %}

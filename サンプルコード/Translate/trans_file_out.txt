@@ -1,0 +1,19 @@
+Thank you very much for using our software.
+
+The question you received is probably due to a different version of Python.
+
+
+Is your environment Windows, macOS or Linux?
+
+For Windows, use the “python” command, and for macOS and Linux, use the “python3” command.
+
+If you use the “python” command on macOS or Linux, the software may not work as expected because Python 2 is started instead of Python 3.
+
+
+I hope the above measures will resolve the issue.
+
+Thank you so that you can continue to use our software in the future.
+
+
+HigPen Works
+

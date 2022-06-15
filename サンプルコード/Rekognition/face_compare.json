@@ -1,0 +1,73 @@
+{
+  "SourceImageFace": {
+      "BoundingBox": {
+          "Width": 0.1776023805141449,
+          "Height": 0.3368937075138092,
+          "Left": 0.23861880600452423,
+          "Top": 0.12653544545173645
+      },
+      "Confidence": 99.99982452392578
+  },
+  "FaceMatches": [
+      {
+          "Similarity": 99.98994445800781,
+          "Face": {
+              "BoundingBox": {
+                  "Width": 0.058940764516592026,
+                  "Height": 0.052680853754282,
+                  "Left": 0.37195461988449097,
+                  "Top": 0.3129628002643585
+              },
+              "Confidence": 99.97746276855469,
+              "Landmarks": [
+                  {
+                      "Type": "eyeLeft",
+                      "X": 0.38967397809028625,
+                      "Y": 0.3338577151298523
+                  },
+                  {
+                      "Type": "eyeRight",
+                      "X": 0.413804292678833,
+                      "Y": 0.33420586585998535
+                  },
+                  {
+                      "Type": "mouthLeft",
+                      "X": 0.3911958336830139,
+                      "Y": 0.35243481397628784
+                  },
+                  {
+                      "Type": "mouthRight",
+                      "X": 0.4112914502620697,
+                      "Y": 0.3527170419692993
+                  },
+                  {
+                      "Type": "nose",
+                      "X": 0.4015454053878784,
+                      "Y": 0.34354501962661743
+                  }
+              ],
+              "Pose": {
+                  "Roll": 1.70350980758667,
+                  "Yaw": 0.5666616559028625,
+                  "Pitch": 6.1802144050598145
+              },
+              "Quality": {
+                  "Brightness": 93.35504150390625,
+                  "Sharpness": 7.589449882507324
+              }
+          }
+      }
+  ],
+  "UnmatchedFaces": [],
+  "ResponseMetadata": {
+      "RequestId": "ae5ebbd6-2b54-4cef-a3ca-e0d32b61d4fe",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+          "x-amzn-requestid": "ae5ebbd6-2b54-4cef-a3ca-e0d32b61d4fe",
+          "content-type": "application/x-amz-json-1.1",
+          "content-length": "912",
+          "date": "Mon, 09 May 2022 08:13:23 GMT"
+      },
+      "RetryAttempts": 0
+  }
+}

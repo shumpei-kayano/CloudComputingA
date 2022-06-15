@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{title}}</title>
+</head>
+<body>
+  <h1>{{message}}</h1>
+
+  <h2>テンプレートで if 文を使用</h2>
+  {% if ml_srvice == 'Translate' %}
+    <p>翻訳サービスが選択されました。</p>
+  {% elif ml_service == 'Polly' %}
+    <p>音声合成サービスが選択されました。</p>
+  {% elif ml_service == 'Textract' %}
+    <p>OCRサービスが選択されました。</p>
+  {% elif ml_service == 'Rekognition' %}
+    <p>画像認識サービスが選択されました。</p>
+  {% else %}
+    <p>その他のサービスが選択されました。</p>
+  {% endif %}
+
+</body>
+</html>

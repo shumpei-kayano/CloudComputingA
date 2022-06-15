@@ -1,0 +1,35 @@
+{% extends "form_base.html" %}
+{% block title %}{{super()}}{% endblock %}
+{% block content %}
+<div>
+  <h2>フォームタイプ {{ form_type }}</h2>
+  <form action="/form_radio" method="POST" enctype="multipart/form-data">
+    <div><h3>希望コース選択してください。</h3></div>
+    <div>
+			<label for="r1">高度情報システムコース：</label>
+			<input type="radio" id="r1" name="radio" 
+          value="高度情報システム">
+		</div>
+		<div>
+			<label for="r2">システムエンジニアコース：</label>
+			<input type="radio" id="r2" name="radio" 
+          value="システムエンジニア">
+		</div>
+		<div>
+			<label for="r3">AI＆データサイエンスコース：</label>
+			<input type="radio" id="r3" name="radio" 
+          value="AI＆データサイエンス">
+		</div>
+		<div>
+			<label for="r4">ネットワークセキュリティコース：</label>
+			<input type="radio" id="r4" name="radio" 
+          value="ネットワークセキュリティ">
+		</div>
+		<div>
+			<input type="submit" value="送信">
+		</div>
+  </form>
+  <hr>
+  <div><p>選択されたコース：{{ cource_name }}</p></div>
+</div>
+{% endblock %}

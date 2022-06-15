@@ -1,0 +1,224 @@
+{
+  "Labels": [
+    {
+      "Name": "Person",
+      "Confidence": 98.18666076660156,
+      "Instances": [
+        {
+          "BoundingBox": {
+            "Width": 0.6629003882408142,
+            "Height": 0.9401461482048035,
+            "Left": 0.01950455829501152,
+            "Top": 0.03928525745868683
+          },
+          "Confidence": 98.18666076660156
+        },
+        {
+          "BoundingBox": {
+            "Width": 0.18046565353870392,
+            "Height": 0.4400310516357422,
+            "Left": 0.00021108939836267382,
+            "Top": 0.0011887447908520699
+          },
+          "Confidence": 87.7105712890625
+        }
+      ],
+      "Parents": []
+    },
+    {
+      "Name": "Human",
+      "Confidence": 98.18666076660156,
+      "Instances": [],
+      "Parents": []
+    },
+    {
+      "Name": "Trophy",
+      "Confidence": 92.48768615722656,
+      "Instances": [],
+      "Parents": []
+    },
+    {
+      "Name": "Glasses",
+      "Confidence": 89.0425796508789,
+      "Instances": [
+        {
+          "BoundingBox": {
+            "Width": 0.18712103366851807,
+            "Height": 0.13470007479190826,
+            "Left": 0.22558124363422394,
+            "Top": 0.18888576328754425
+          },
+          "Confidence": 89.0425796508789
+        }
+      ],
+      "Parents": [
+        {
+          "Name": "Accessories"
+        }
+      ]
+    },
+    {
+      "Name": "Accessories",
+      "Confidence": 89.0425796508789,
+      "Instances": [],
+      "Parents": []
+    },
+    {
+      "Name": "Accessory",
+      "Confidence": 89.0425796508789,
+      "Instances": [],
+      "Parents": []
+    },
+    {
+      "Name": "Tie",
+      "Confidence": 77.9482192993164,
+      "Instances": [
+        {
+          "BoundingBox": {
+            "Width": 0.05532137677073479,
+            "Height": 0.33360597491264343,
+            "Left": 0.3444448709487915,
+            "Top": 0.4757785499095917
+          },
+          "Confidence": 77.9482192993164
+        }
+      ],
+      "Parents": [
+        {
+          "Name": "Accessories"
+        }
+      ]
+    },
+    {
+      "Name": "Goblet",
+      "Confidence": 66.61180114746094,
+      "Instances": [],
+      "Parents": [
+        {
+          "Name": "Glass"
+        }
+      ]
+    },
+    {
+      "Name": "Glass",
+      "Confidence": 66.61180114746094,
+      "Instances": [],
+      "Parents": []
+    },
+    {
+      "Name": "Suit",
+      "Confidence": 60.28994369506836,
+      "Instances": [
+        {
+          "BoundingBox": {
+            "Width": 0.5589342713356018,
+            "Height": 0.742848813533783,
+            "Left": 0.0716782733798027,
+            "Top": 0.24668115377426147
+          },
+          "Confidence": 60.28994369506836
+        }
+      ],
+      "Parents": [
+        {
+          "Name": "Overcoat"
+        },
+        {
+          "Name": "Coat"
+        },
+        {
+          "Name": "Clothing"
+        }
+      ]
+    },
+    {
+      "Name": "Clothing",
+      "Confidence": 60.28994369506836,
+      "Instances": [],
+      "Parents": []
+    },
+    {
+      "Name": "Coat",
+      "Confidence": 60.28994369506836,
+      "Instances": [],
+      "Parents": [
+        {
+          "Name": "Clothing"
+        }
+      ]
+    },
+    {
+      "Name": "Overcoat",
+      "Confidence": 60.28994369506836,
+      "Instances": [],
+      "Parents": [
+        {
+          "Name": "Coat"
+        },
+        {
+          "Name": "Clothing"
+        }
+      ]
+    },
+    {
+      "Name": "Apparel",
+      "Confidence": 60.28994369506836,
+      "Instances": [],
+      "Parents": []
+    },
+    {
+      "Name": "Flower Arrangement",
+      "Confidence": 60.0565185546875,
+      "Instances": [],
+      "Parents": [
+        {
+          "Name": "Person"
+        },
+        {
+          "Name": "Flower"
+        },
+        {
+          "Name": "Plant"
+        }
+      ]
+    },
+    {
+      "Name": "Plant",
+      "Confidence": 60.0565185546875,
+      "Instances": [],
+      "Parents": []
+    },
+    {
+      "Name": "Flower",
+      "Confidence": 60.0565185546875,
+      "Instances": [],
+      "Parents": [
+        {
+          "Name": "Plant"
+        }
+      ]
+    },
+    {
+      "Name": "Blossom",
+      "Confidence": 60.0565185546875,
+      "Instances": [],
+      "Parents": [
+        {
+          "Name": "Plant"
+        }
+      ]
+    }
+  ],
+  "LabelModelVersion": "2.0",
+  "ResponseMetadata": {
+    "RequestId": "918ee966-52f5-49c0-9b4b-d7788acce4bb",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "x-amzn-requestid": "918ee966-52f5-49c0-9b4b-d7788acce4bb",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "2469",
+      "date": "Wed, 11 May 2022 08:37:06 GMT"
+    },
+    "RetryAttempts": 0
+  }
+}

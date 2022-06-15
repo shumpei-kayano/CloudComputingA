@@ -1,0 +1,35 @@
+{% extends "form_base.html" %}
+{% block title %}{{super()}}{% endblock %}
+{% block content %}
+<div>
+  <h2>フォームタイプ チェックボックス</h2>
+  <form action="/form_check" method="POST" enctype="multipart/form-data">
+    <div><h3>履修科目選択（複数選択可）</h3></div>
+    <div>
+			<label for="ck1">先端プログラミング言語：</label>
+			<input type="checkbox" id="ck1" name="checkbox" 
+          value="先端プログラミング言語">
+		</div>
+		<div>
+			<label for="ck2">機械学習実習：</label>
+			<input type="checkbox" id="ck2" name="checkbox" 
+          value="機械学習実習">
+		</div>
+		<div>
+			<label for="ck3">ディープラーニング実習：</label>
+			<input type="checkbox" id="ck3" name="checkbox" 
+          value="ディープラーニング実習">
+		</div>
+		<div>
+			<label for="ck4">AIシステム設計実習：</label>
+			<input type="checkbox" id="ck4" name="checkbox" 
+          value="AIシステム設計実習">
+		</div>
+		<div>
+			<input type="submit" value="送信">
+		</div>
+  </form>
+  <hr>
+  <div><p>選択された科目：{{ subject_name }}</p></div>
+</div>
+{% endblock %}

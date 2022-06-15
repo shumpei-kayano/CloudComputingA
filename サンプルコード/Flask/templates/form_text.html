@@ -1,0 +1,18 @@
+{% extends "form_base.html" %}
+{% block title %}{{super()}}{% endblock %}
+{% block content %}
+<div>
+  <h2>フォームタイプ {{ form_type }}</h2>
+  <form action="/form_text" method="POST" enctype="multipart/form-data">
+    <div>
+      <label for="name">氏名：</label>
+      <input type="text" id="name" name="name" placeholder="氏名を入力">	
+    </div>
+    <div>
+      <input type="submit" value="送信">
+    </div>
+  </form>
+  <hr>
+  <div><p>入力された氏名：{{ file_name }}</p></div>
+</div>
+{% endblock %}
