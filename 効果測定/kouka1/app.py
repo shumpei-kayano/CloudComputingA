@@ -19,9 +19,12 @@ def index():
         # Translate サービスクライアントを作成
         translate = boto3.client('translate')
         # 翻訳前テキストを取得
-        preText = request.form.get('text')
+        getText = request.form.get('texts')
+        preText = getText
         # 翻訳言語の取得
-        SourceLanguage = request.form.get('language')
+        language = 'ja' #デフォルトは日本語
+        language = request.form.get('language')
+        SourceLanguage = language
         # 翻訳
         result = translate.translate_text(
             Text= preText,
@@ -33,8 +36,10 @@ def index():
     # GETのとき
     else:
         transText = ''
+        preText = ''
     return render_template('index.html',
-                transText = transText)
+                transText = transText,
+                preText = preText)
 # アプリケーションの起動 おまじない debug=Trueでエラーを表示してくれる
 if __name__ == '__main__':
     app.run(debug=True)
