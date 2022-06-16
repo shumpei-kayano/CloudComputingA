@@ -24,8 +24,12 @@ def index():
         # ファイル名を取得
         filename1 = f1.filename
         filename2 = f2.filename
+        # 文字認識画像名設定(拡張子の削除)
+        filename3 = filename2.replace('.jpg', '_rekog.jpg')
         # ファイルを保存するディレクトリを指定
-        filepath = 'static/image/' + filename2
+        filepath1 = 'static/image/' + filename1 #source
+        filepath2 = 'static/image/' + filename2 #target
+        filepath3 = 'static/image/' + filename3 #rekog
         # try:
         # Rekognition サービスクライアントを作成
         rekognition = boto3.client('rekognition')
@@ -37,15 +41,13 @@ def index():
                 result = rekognition.compare_faces(
                     SourceImage={'Bytes': source.read()},
                     TargetImage={'Bytes': target.read()})
-                # 結果を整形して表示
-                print(json.dumps(result, indent=4))
 
         # 入力画像のファイルを読み込む
-        image_in = Image.open(filename2)
+        image_in3 = Image.open(filename2)
         # 座像のサイズを取得
-        w, h = image_in.size
+        w, h = image_in3.size
         # 描画用のオブジェクトを作成
-        draw = ImageDraw.Draw(image_in)
+        draw = ImageDraw.Draw(image_in3)
         # 一致した顔を順番に処理
         for face in result['FaceMatches']:
             # バウンディングボックスを取得
@@ -58,20 +60,28 @@ def index():
             # 検知した顔を赤枠で囲む draw.rectangle((座標), fill=(塗りつぶしの色：任意), outline=(赤枠の色：任意),width=(太さ：任意))
             draw.rectangle((left, top, right, bottom), outline=(255, 0, 0),width=5)
         # 出力画像をファイルに保存
-        image_in.save(filepath)
-        text = '処理が完了しました。'
+        image_in3.save(filepath3)
+        image_in1 = Image.open(filename1)
+        image_in2 = Image.open(filename2)
+        image_in1.save(filepath1)
+        image_in2.save(filepath2)
         flg = True
+        image_url1 = filepath1
+        image_url2 = filepath2
+        image_url3 = filepath3
         # except AmazonClientException:
         #     text = '顔を認識できませんでした。'
         #     filepath = ''
     # GETのとき
     else:
-        text = ''
-        filepath = ''
+        filepath1 = ''
+        filepath2 = ''
+        filepath3 = ''
         flg = False
     return render_template('index.html',
-                    text = text,
-                    image_url = filepath,
+                    image_url1 = filepath1,
+                    image_url2 = filepath2,
+                    image_url3 = filepath3,
                     flg = flg)
 # アプリケーションの起動 おまじない debug=Trueでエラーを表示してくれる
 if __name__ == '__main__':

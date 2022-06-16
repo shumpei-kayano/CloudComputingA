@@ -15,10 +15,16 @@
                 <div class="col">
                     <label for="formFileLg" class="form-label">認識元画像</label>
                     <input class="form-control form-control-lg" id="formFileLg" type="file" accept="image/*" name="image1" required>
+                    <div class="card mt-3" style="width: 18rem;">
+                        <img src="{{ image_url1 }}" class="card-img-top">
+                    </div>
                 </div>
                 <div class="col">
                     <label for="formFileLg" class="form-label">認識対象画像</label>
                     <input class="form-control form-control-lg" id="formFileLg" type="file" accept="image/*" name="image2" required>
+                    <div class="card mt-3" style="width: 18rem;">
+                        <img src="{{ image_url2 }}" class="card-img-top">
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -35,10 +41,10 @@
             <div class="row">
                 <div class="col"></div>
                 <div class="col">
-                    <div class="card mt-3" style="width: 18rem;">
-                        <img src="{{ image_url }}" class="card-img-top">
+                    <div class="card mt-3" style="width: 18rem;text-align: center;">
+                        <img src="{{ image_url3 }}" class="card-img-top">
                         <div class="card-body">
-                        <p class="card-text">{{ text }}</p>
+                        <p class="card-text">検出されました</p>
                         </div>
                     </div>
                 </div>
