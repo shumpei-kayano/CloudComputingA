@@ -60,6 +60,7 @@ def index():
         # 出力画像をファイルに保存
         image_in.save(filepath)
         text = '処理が完了しました。'
+        flg = True
         # except AmazonClientException:
         #     text = '顔を認識できませんでした。'
         #     filepath = ''
@@ -67,9 +68,11 @@ def index():
     else:
         text = ''
         filepath = ''
+        flg = False
     return render_template('index.html',
                     text = text,
-                    image_url = filepath)
+                    image_url = filepath,
+                    flg = flg)
 # アプリケーションの起動 おまじない debug=Trueでエラーを表示してくれる
 if __name__ == '__main__':
     app.run(debug=True)
