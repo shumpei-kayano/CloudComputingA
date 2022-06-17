@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}感情分析{% endblock %}
+{% block content %}
+    <div class="row mt-5">
+        <div class="col"></div>
+        <div class="col">
+            <table class="table table-striped text-center">
+                <tr><th>検知した言語</th><td>{{ language }}</td></tr>
+                <tr><th>感情分析結果</th><td>{{ sentiment }}</td></tr>
+                <tr><th>肯定的な感情のスコア</th><td>{{ positive }}</td></tr>
+                <tr><th>否定的な感情のスコア</th><td>{{ negative }}</td></tr>
+                <tr><th>中立的な感情のスコア</th><td>{{ neutral }}</td></tr>
+                <tr><th>混じった感情のスコア</th><td>{{ mixed }}</td></tr>
+            </table>
+        </div>         
+        <div class="col"></div>
+    </div>
+    <div class="col mt-5" style="text-align: center;">
+        <a href="/"><button type="button" class="btn btn-secondary btn-lg mb-5">　戻る　</button></a>
+    </div>
+{% endblock %}
