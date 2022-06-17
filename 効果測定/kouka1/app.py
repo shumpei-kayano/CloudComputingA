@@ -23,12 +23,12 @@ def index():
         preText = getText
         # 翻訳言語の取得
         language = request.form.get('language')
-        SourceLanguage = language
+        TargetLanguage = language
         # 翻訳
         result = translate.translate_text(
             Text= preText,
             SourceLanguageCode='auto', 
-            TargetLanguageCode=SourceLanguage,
+            TargetLanguageCode=TargetLanguage,
             TerminologyNames=['term_ja'])
         translatedText = result['TranslatedText']
         transText = translatedText
