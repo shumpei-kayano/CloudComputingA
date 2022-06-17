@@ -24,7 +24,7 @@
                         </select>
                         <button type="submit" class="btn btn-warning btn-lg mb-1" formaction="/">　翻訳　</button>
                         <button type="submit" class="btn btn-primary btn-lg mb-1" formaction="{{ url_for('comprehend') }}">感情分析</button>
-                        <button type="submit" class="btn btn-danger btn-lg mb-1" formaction="/polly">音声合成</button>
+                        <button type="submit" class="btn btn-danger btn-lg mb-1" formaction="{{ url_for('polly') }}">音声合成</button>
                     </div>
                 </div>
             </form>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="col-2 mt-5" style="text-align: center;">
                         <button type="submit" class="btn btn-primary btn-lg mb-4 mt-5" formaction="{{ url_for('comprehend') }}">感情分析</button>
-                        <button type="submit" class="btn btn-danger btn-lg" formaction="/">音声合成</button>
+                        <button type="submit" class="btn btn-danger btn-lg" formaction="{{ url_for('polly') }}">音声合成</button>
                     </div>
                 </div>
             </form>

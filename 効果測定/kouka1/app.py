@@ -6,6 +6,8 @@ import boto3
 import json
 # sys をインポート
 import sys
+# contextlibをインポート
+import contextlib
 
 # インスタンスの作成
 app = Flask(__name__)
@@ -66,6 +68,31 @@ def comprehend():
                         negative = round((negative * 100),2),
                         neutral = round((neutral * 100),2),
                         mixed = round((mixed * 100),2))
+
+# -----------Polly(音声合成)--------------
+@app.route('/polly', methods=['POST'])
+def polly():
+        # Polly サービスクライアントを作成
+        comprehend = boto3.client('polly')
+        # 音声合成するテキストを取得
+        getText = request.form.get('texts')
+        text = getText
+        # テキストから音声を合成
+        result = polly.synthesize_speech(Text=text, OutputFormat='mp3', VoiceId='Mizuki')
+        # 出力ファイルのパス
+        path = 'polly_synth.mp3'
+        # 音声のストリームを開く
+        with contextlib.closing(result['AudioStream']) as stream:
+            # 出力ファイルを開く
+            with open(path, 'wb') as file:
+                file.write(stream.read())
+        # 出力ファイルを再生する
+        if os.name == 'nt':
+            os.startfile(path)
+        return render_template('polly.html',
+                        text = text)
+
+
 # アプリケーションの起動 おまじない debug=Trueでエラーを表示してくれる
 if __name__ == '__main__':
     app.run(debug=True)

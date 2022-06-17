@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}音声合成{% endblock %}
+{% block content %}
+    <div class="row mt-5">
+        <div class="col"></div>
+        <div class="col">
+            <table class="table table-striped text-center">
+                <tr><th>音声合成したテキスト</th><td>{{ text }}</td></tr>
+                <tr><th>音声ID</th><td>Mizuki(女性)</td></tr>
+            </table>
+        </div>         
+        <div class="col"></div>
+    </div>
+    <div class="col mt-5" style="text-align: center;">
+        <a href="/"><button type="button" class="btn btn-secondary btn-lg mb-5">　戻る　</button></a>
+    </div>
+{% endblock %}
