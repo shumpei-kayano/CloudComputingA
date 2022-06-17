@@ -19,7 +19,7 @@ def index():
         # Translate サービスクライアントを作成
         translate = boto3.client('translate')
         # 翻訳前テキストを取得
-        getText = request.form.get('pretext')
+        getText = request.form.get('texts')
         preText = getText
         # 翻訳言語の取得
         language = request.form.get('language')
@@ -46,7 +46,7 @@ def comprehend():
         # Comprehend サービスクライアントを作成
         comprehend = boto3.client('comprehend', 'us-east-1')
         # 感情分析するテキストを取得
-        getText = request.form.get('pretext')
+        getText = request.form.get('texts')
         text = getText
         # 感情分析するテキストの言語を取得
         result = comprehend.detect_dominant_language(Text=text)
