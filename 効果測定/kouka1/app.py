@@ -73,7 +73,7 @@ def comprehend():
 @app.route('/polly', methods=['POST'])
 def polly():
         # Polly サービスクライアントを作成
-        comprehend = boto3.client('polly')
+        polly = boto3.client('polly')
         # 音声合成するテキストを取得
         getText = request.form.get('texts')
         text = getText
@@ -86,12 +86,14 @@ def polly():
             # 出力ファイルを開く
             with open(path, 'wb') as file:
                 file.write(stream.read())
-        # 出力ファイルを再生する
+        # 出力ファイルを再生する nt:Windows
         if os.name == 'nt':
             os.startfile(path)
+        # macの場合
+        else:
+            os.system("open polly_synth.mp3")
         return render_template('polly.html',
                         text = text)
-
 
 # アプリケーションの起動 おまじない debug=Trueでエラーを表示してくれる
 if __name__ == '__main__':
