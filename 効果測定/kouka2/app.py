@@ -24,7 +24,7 @@ def index():
         # ファイル名を取得
         filename1 = f1.filename
         filename2 = f2.filename
-        # 文字認識画像名設定(拡張子の削除)
+        # 文字認識画像名設定
         filename3 = filename2.replace('.jpg', '_rekog.jpg')
         # ファイルを保存するディレクトリを指定
         filepath1 = 'static/image/' + filename1 #source
@@ -40,8 +40,22 @@ def index():
                 # ソース画像の顔をターゲット画像から探す
                 result = rekognition.compare_faces(
                     SourceImage={'Bytes': source.read()},
-                    TargetImage={'Bytes': target.read()})
-
+                    TargetImage={'Bytes': target.read()}) #SimilarityThresholdを指定すると認識度。高いほど厳しいチェックになる。0-100で指定。
+        # 一致した顔が見つからなかったとき
+        if not result['FaceMatches']:
+            message = '一致した顔が検出されませんでした'
+            filepath1 = ''
+            filepath2 = ''
+            filepath3 = ''
+            flg = False
+            confidence = 0
+            return render_template('index.html',
+                            image_url1 = filepath1,
+                            image_url2 = filepath2,
+                            image_url3 = filepath3,
+                            flg = flg,
+                            message = message,
+                            confidence = confidence)
         # 入力画像のファイルを読み込む
         image_in3 = Image.open(filename2)
         # 座像のサイズを取得
@@ -59,6 +73,8 @@ def index():
             bottom = top+int(box['Height']*h)
             # 検知した顔を赤枠で囲む draw.rectangle((座標), fill=(塗りつぶしの色：任意), outline=(赤枠の色：任意),width=(太さ：任意))
             draw.rectangle((left, top, right, bottom), outline=(255, 0, 0),width=5)
+        matcheFace = result['FaceMatches'][0]
+        confidence = matcheFace['Face']['Confidence']
         # 出力画像をファイルに保存
         image_in3.save(filepath3)
         image_in1 = Image.open(filename1)
@@ -69,20 +85,22 @@ def index():
         image_url1 = filepath1
         image_url2 = filepath2
         image_url3 = filepath3
-        # except AmazonClientException:
-        #     text = '顔を認識できませんでした。'
-        #     filepath = ''
+        message = '一致した顔が検出されました'
     # GETのとき
     else:
         filepath1 = ''
         filepath2 = ''
         filepath3 = ''
+        message = ''
         flg = False
+        confidence = 0
     return render_template('index.html',
                     image_url1 = filepath1,
                     image_url2 = filepath2,
                     image_url3 = filepath3,
-                    flg = flg)
+                    message = message,
+                    flg = flg,
+                    confidence = round(confidence,2))
 # アプリケーションの起動 おまじない debug=Trueでエラーを表示してくれる
 if __name__ == '__main__':
     app.run(debug=True)

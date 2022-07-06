@@ -31,6 +31,7 @@
                 <div class="col"></div>
                 <div class="col mt-5" style="text-align: center;">
                     <button type="submit" class="btn btn-danger btn-lg mb-5">認識</button>
+                    <p class="p">{{ message }}</p>
                 </div>
                 <div class="col"></div>
             </div>
@@ -44,7 +45,7 @@
                     <div class="card mt-3" style="width: 18rem;text-align: center;">
                         <img src="{{ image_url3 }}" class="card-img-top">
                         <div class="card-body">
-                        <p class="card-text">検出されました</p>
+                        <p class="card-text">信頼度：{{ confidence }}%</p>
                         </div>
                     </div>
                 </div>
