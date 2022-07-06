@@ -24,8 +24,8 @@ def index():
         # ファイル名を取得
         filename1 = f1.filename
         filename2 = f2.filename
-        # 文字認識画像名設定
-        filename3 = filename2.replace('.jpg', '_rekog.jpg')
+        # 認識画像名設定
+        filename3 = filename1 + filename2.replace('.jpg', '_rekog.jpg')
         # ファイルを保存するディレクトリを指定
         filepath1 = 'static/image/' + filename1 #source
         filepath2 = 'static/image/' + filename2 #target
