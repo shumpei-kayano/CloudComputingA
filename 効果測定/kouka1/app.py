@@ -49,6 +49,9 @@ def comprehend():
         comprehend = boto3.client('comprehend', 'us-east-1')
         # 感情分析するテキストを取得
         getText = request.form.get('texts')
+        # 何もなければリダイレクト
+        if getText == '':
+            return redirect('/')
         text = getText
         # 感情分析するテキストの言語を取得
         result = comprehend.detect_dominant_language(Text=text)
@@ -76,6 +79,9 @@ def polly():
         polly = boto3.client('polly')
         # 音声合成するテキストを取得
         getText = request.form.get('texts')
+        # 何もなければリダイレクト
+        if getText == '':
+            return redirect('/')
         text = getText
         # テキストから音声を合成
         result = polly.synthesize_speech(Text=text, OutputFormat='mp3', VoiceId='Mizuki')
