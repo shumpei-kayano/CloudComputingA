@@ -30,7 +30,6 @@ def index():
         filepath1 = 'static/image/' + filename1 #source
         filepath2 = 'static/image/' + filename2 #target
         filepath3 = 'static/image/' + filename3 #rekog
-        # try:
         # Rekognition サービスクライアントを作成
         rekognition = boto3.client('rekognition')
         # ソース画像を開く
@@ -56,7 +55,7 @@ def index():
                             flg = flg,
                             message = message,
                             confidence = confidence)
-        # 入力画像のファイルを読み込む
+        # 一致した顔を見つけた時 ⇨ 入力画像のファイルを読み込む
         image_in3 = Image.open(filename2)
         # 座像のサイズを取得
         w, h = image_in3.size
@@ -82,9 +81,9 @@ def index():
         image_in1.save(filepath1)
         image_in2.save(filepath2)
         flg = True
-        image_url1 = filepath1
-        image_url2 = filepath2
-        image_url3 = filepath3
+        image_url1 = filepath1 #source
+        image_url2 = filepath2 #target
+        image_url3 = filepath3 #rekog
         message = '一致した顔が検出されました'
     # GETのとき
     else:
@@ -95,9 +94,9 @@ def index():
         flg = False
         confidence = 0
     return render_template('index.html',
-                    image_url1 = filepath1,
-                    image_url2 = filepath2,
-                    image_url3 = filepath3,
+                    image_url1 = filepath1, #source
+                    image_url2 = filepath2, #target
+                    image_url3 = filepath3, #rekog
                     message = message,
                     flg = flg,
                     confidence = round(confidence,2))
